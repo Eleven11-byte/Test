@@ -1,0 +1,157 @@
+\documentclass[utf8,a4paper]{book} 
+
+\usepackage{geometry}  
+% 与页边距有关的宏包
+\geometry{
+left=2.0cm, 
+right=2.0cm, 
+top=2.5cm, 
+bottom=2.5cm}  
+%设置页边距,与Word一致
+\usepackage{ragged2e} 
+%与两端对齐有关的宏包
+\usepackage{color}
+% 文本颜色处理 {\color{red}这里是红色}
+\usepackage{setspace}
+%支持行间距的宏包,用它可以调整行间距
+\usepackage{ctex}  
+%%支持中文的包
+\usepackage[utf8]{inputenc}
+%! font encoding
+\usepackage[T1]{fontenc}   
+%与Times New Roman相关的包
+\usepackage{graphicx}     
+\usepackage{subfigure} 
+%支持插入图片的包
+\usepackage{float}       
+%支持插入图片的包
+\usepackage{underscore}
+%支持正文中的下划线
+
+\usepackage{bm}  %
+%数学中公式符号黑体表示变量 \bm{}
+\usepackage{amsmath}  
+%数学中公式符号表示变量 \mathcal{}
+\usepackage{mathrsfs}  
+%数学中公式符号手写花体 \mathscr{}
+\usepackage{amsfonts,amssymb}
+
+\usepackage{color} 
+% 文本颜色处理 {\color{red}这里是红色}
+
+\usepackage{listings}
+%显示Python代码的包 \begin{lstlisting}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\lstset{frame=tb,
+  language=Python,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  %keywordstyle=\color{blue},
+  %commentstyle=\color{dkgreen},
+  %stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+\usepackage{hyperref}
+%支持链接
+\hypersetup{
+colorlinks=true,
+linkcolor=black
+}
+
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{bigstrut}
+\usepackage{makecell}
+\usepackage{listings}
+\usepackage{tabularx}
+
+\usepackage[table]{xcolor}
+\definecolor{RowBack}{rgb}{0.9,0.9,0.9}
+
+\usepackage[noend]{algpseudocode}
+\usepackage{algorithmicx,algorithm}
+
+\usepackage{pifont}
+%带圈数字 \ding{172-181}
+
+\usepackage{caption2}
+%处理图片标题名称中的冒号
+\usepackage{bbding}
+
+\usepackage{enumerate}
+
+%编译报错中提到需要使用bookmark
+\usepackage{bookmark}
+
+\begin{document}   
+\setmainfont{Times New Roman}  
+\setcounter{tocdepth}{4}
+\setcounter{secnumdepth}{4}
+\renewcommand\arraystretch{1.2}
+\renewcommand{\figurename}{图}
+\renewcommand{\captionlabeldelim}{}
+
+\chapter{章节名称}
+
+正文正常写
+
+\section{第一节}
+
+正文正常写
+
+\subsection{插入代码}
+
+代码引用示例如下（去除了颜色）
+
+\begin{lstlisting}
+    public static void Bilt(Texture src,RenderTexture dest);
+    public static void Bilt(Texture src,RenderTexture dest,Material mat,int pass =-1);
+    public static void Bilt(Texture src,Material mat,int pass=-1);
+    
+        // Called when start
+            protected void CheckResources() {
+                bool isSupported = CheckSupport();
+        
+                if (isSupported == false) {
+                    NotSupported();
+                }
+            }
+        
+        // Called in CheckResources to check support on this platform
+            protected bool CheckSupport() {
+                if (SystemInfo.supportsImageEffects == false || SystemInfo.supportsRenderTextures == false) {
+                    Debug.LogWarning("This platform does not support image effects or render textures.");
+                    return false;
+                }
+        
+                return true;
+            }
+
+
+\end{lstlisting}
+
+\subsection{插入图片}
+
+图片插入示例\ref{brtsatcon}所示。
+    \begin{figure}[htbp]
+        \centering
+        \includegraphics[width=.8\linewidth]{./images/brtsatcon.png}%相对路径
+        \caption{图像调整效果：左图为原图，右图为调整后图像}
+        \label {brtsatcon}
+    \end{figure}
+
+\section{第二节}
+
+\end{document}
